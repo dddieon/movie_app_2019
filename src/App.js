@@ -27,23 +27,25 @@ class App extends React.Component {
             <section className="container">
                 {isLoading ? (
                     <div className="loader">
-                        <span className="loader__text">"Loading..."</span>
+                        <span className="loader__text">Loading...</span>
                     </div>
                 ) : (
-                    movies.map((movie) => {
-                        return (
-                            //컴포넌트는 HTML을 반환한다
-                            <Movie
-                                key={movie.id}
-                                id={movie.id}
-                                year={movie.year}
-                                title={movie.title}
-                                summary={movie.summary}
-                                poster={movie.medium_cover_image}
-                                genres={movie.genres}
-                            ></Movie>
-                        )
-                    })
+                    <div className="movies">
+                        {movies.map((movie) => {
+                            return (
+                                //컴포넌트는 HTML을 반환한다
+                                <Movie
+                                    key={movie.id}
+                                    id={movie.id}
+                                    year={movie.year}
+                                    title={movie.title}
+                                    summary={movie.summary}
+                                    poster={movie.medium_cover_image}
+                                    genres={movie.genres}
+                                ></Movie>
+                            )
+                        })}
+                    </div>
                 )}
             </section>
         )
