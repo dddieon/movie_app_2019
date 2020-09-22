@@ -7,6 +7,7 @@ import "./Movie.css"
 function Movie({ id, year, title, summary, poster, genres }) {
     return (
         <Link
+            className="movie"
             to={{
                 pathname: `/movie/${id}`,
                 state: {
@@ -18,7 +19,7 @@ function Movie({ id, year, title, summary, poster, genres }) {
                 },
             }}
         >
-            <div className="movie">
+            <div>
                 <img src={poster} alt={title} title={title}></img>
                 <div className="movie__data">
                     <h3 className="movie__title">{title}</h3>
